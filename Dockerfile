@@ -1,10 +1,12 @@
 FROM golang:alpine
 
-WORKDIR /
+WORKDIR /app/src
 
-COPY . .
+COPY go.* .
 
 RUN go mod download
+
+COPY . .
 
 EXPOSE 8080
 
